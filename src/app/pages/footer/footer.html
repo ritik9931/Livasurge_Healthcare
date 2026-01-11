@@ -1,0 +1,54 @@
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- Brand Section -->
+    <div class="footer-col brand">
+      <img src="/images/logo.jpeg" alt="Livasurge Healthcare Logo" class="footer-logo" loading="lazy"
+        decoding="async" />
+
+      <p class="brand-text">
+        Combining advanced medical technology with expert care
+        to ensure better health outcomes for every patient.
+      </p>
+
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+
+      <div class="footer-item">
+        <mat-icon>location_on</mat-icon>
+        <span>{{ address }}</span>
+      </div>
+
+      <div class="footer-item">
+        <mat-icon>call</mat-icon>
+        <span>{{ phone }}</span>
+      </div>
+
+      <div class="footer-item">
+        <mat-icon>email</mat-icon>
+        <span>{{ email }}</span>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a routerLink="/">Home</a>
+      <a routerLink="/about-us">About Us</a>
+      <a routerLink="/appointment">Book Appointment</a>
+      <a routerLink="/contact-us">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    © {{ currentYear }} Livasurge Healthcare. All Rights Reserved.
+  </div>
+
+</footer>

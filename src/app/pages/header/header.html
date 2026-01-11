@@ -1,0 +1,54 @@
+<mat-toolbar
+  color="primary"
+  class="header-toolbar"
+  [class.scrolled]="isScrolled"
+>
+
+  <!-- Logo -->
+  <a routerLink="/" class="brand">
+    <img
+      src="/images/logo.jpeg"
+      alt="Livasurge Healthcare"
+      class="logo"
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+
+  <span class="spacer"></span>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-links">
+    <a mat-button routerLink="/" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="/about-us" routerLinkActive="active">About</a>
+    <a mat-button routerLink="/doctors" routerLinkActive="active">Doctors</a>
+    <a mat-button routerLink="/contact-us" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <!-- CTA Button -->
+  <button
+    mat-raised-button
+    color="accent"
+    class="cta-btn"
+    routerLink="/appointment"
+  >
+    Book Appointment
+  </button>
+
+  <!-- Mobile Menu Button -->
+  <button mat-icon-button class="menu-btn" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" *ngIf="isMenuOpen">
+  <a routerLink="/" (click)="closeMenu()">Home</a>
+  <a routerLink="/about-us" (click)="closeMenu()">About</a>
+  <a routerLink="/doctors" (click)="closeMenu()">Doctors</a>
+  <a routerLink="/contact-us" (click)="closeMenu()">Contact</a>
+  <a routerLink="/appointment" class="mobile-cta" (click)="closeMenu()">
+    Book Appointment
+  </a>
+</div>

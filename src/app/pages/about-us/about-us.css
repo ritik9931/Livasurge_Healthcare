@@ -1,0 +1,173 @@
+/* HERO */
+.about-hero {
+  position: relative;
+  background: url('/appointment/hero-bg.png') center/cover no-repeat;
+  padding: 120px 20px 90px;
+  margin-top: -64px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 70, 140, 0.85),
+    rgba(0, 160, 220, 0.85)
+  );
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.hero-content p {
+  max-width: 650px;
+  margin: 16px auto 0;
+  font-size: 1.1rem;
+}
+
+/* GRADIENT TEXT */
+.text-gradient {
+  background: linear-gradient(90deg, #00c6ff, #ced6df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* STORY */
+.about-story {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.story-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.story-content h2 {
+   font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+/* Gradient span safety */
+.story-content h2 .text-gradient {
+  display: inline-block;
+  white-space: normal;
+}
+
+.story-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* .story-content {
+  display: flex;
+  flex-direction: column;
+} */
+
+.story-content .section-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
+/* VALUES */
+.about-values {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  margin-top: -5rem;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  text-transform: uppercase;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.value-card {
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.value-card mat-icon {
+   font-size: 40px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 14px;
+  color: #007bff;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .story-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .story-content h2 {
+    font-size: 1.6rem;     /* smaller font */
+    line-height: 1.45;     /* more breathing space */
+  }
+
+  .story-content h2 .text-gradient {
+    display: block;       /* moves “Your Health” to next line */
+    margin-top: 4px;
+  }
+}

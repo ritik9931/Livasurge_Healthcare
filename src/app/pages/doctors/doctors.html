@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<!-- HERO -->
+<section class="doctors-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <h1>
+      Meet Our <span class="text-gradient">Expert Doctors</span>
+    </h1>
+    <p>
+      Highly qualified specialists dedicated to providing the best medical care.
+    </p>
+  </div>
+</section>
+<section class="doctors-section">
+  <div class="container">
+
+    <div class="doctors-grid">
+
+      <!-- Doctor Card -->
+      <mat-card class="doctor-card">
+        <div class="doctor-img">
+          <img src="/doctors/doctor1.webp" alt="Dr. Sonali Kumari" />
+        </div>
+        <h4>Dr. Sonali Kumari</h4>
+        <span>Cardiologist</span>
+        <p>15+ years experience in heart care and interventions.</p>
+
+        <button mat-stroked-button color="primary" routerLink="/appointment">
+          Book Appointment
+        </button>
+      </mat-card>
+
+      <mat-card class="doctor-card">
+        <div class="doctor-img">
+          <img src="/doctors/doctor2.png" alt="Dr. Anita Sharma" />
+        </div>
+        <h4>Dr. Anita Sharma</h4>
+        <span>Neurologist</span>
+        <p>Expert in brain and nervous system disorders.</p>
+
+        <button mat-stroked-button color="primary" routerLink="/appointment">
+          Book Appointment
+        </button>
+      </mat-card>
+
+      <mat-card class="doctor-card">
+        <div class="doctor-img">
+          <img src="/doctors/doctor4.jpg" alt="Dr. Rajesh Kumar" />
+        </div>
+        <h4>Dr. Rajesh Kumar</h4>
+        <span>Orthopedic Surgeon</span>
+        <p>Specialist in joint replacement and trauma care.</p>
+
+        <button mat-stroked-button color="primary" routerLink="/appointment">
+          Book Appointment
+        </button>
+      </mat-card>
+
+      <mat-card class="doctor-card">
+        <div class="doctor-img">
+          <img src="/doctors/doctor3.webp" alt="Dr. Sneha Patel" />
+        </div>
+        <h4>Dr. Sneha Patel</h4>
+        <span>Pediatrician</span>
+        <p>Compassionate child care with modern approach.</p>
+
+        <button mat-stroked-button color="primary" routerLink="/appointment">
+          Book Appointment
+        </button>
+      </mat-card>
+
+    </div>
+
+  </div>
+</section>
+<section class="doctor-cta">
+  <div class="container">
+    <h2>
+      Need a Consultation?
+    </h2>
+    <p>
+      Book an appointment with our specialists today.
+    </p>
+
+    <a mat-raised-button color="primary" routerLink="/appointment">
+      Book Appointment
+    </a>
+  </div>
+</section>
+
+<app-footer></app-footer>
+

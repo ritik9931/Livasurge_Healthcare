@@ -1,0 +1,136 @@
+<!-- TOP BAR -->
+<header class="admin-header">
+
+  <div class="header-left">
+    <h2>Admin Panel</h2>
+
+    <nav class="admin-nav">
+      <button
+        mat-button
+        routerLink="/admin/dashboard"
+        routerLinkActive="active-link"
+      >
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+      </button>
+
+      <button
+        mat-button
+        routerLink="/admin/contact"
+        routerLinkActive="active-link"
+      >
+        <mat-icon>contact_page</mat-icon>
+        Contact
+      </button>
+    </nav>
+  </div>
+
+  <button mat-stroked-button color="warn" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+
+</header>
+
+
+<!-- WELCOME -->
+<section class="welcome-section">
+  <h1>
+    Welcome back, <span class="text-gradient">Admin</span>
+  </h1>
+  <p>
+    Manage hospital operations and monitor activities from one place.
+  </p>
+</section>
+
+<section class="table-section">
+  <mat-card class="table-card">
+
+    <div class="table-header">
+      <h2 class="table-title">Appointment Requests</h2>
+
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="downloadPDF()"
+      >
+        <mat-icon>picture_as_pdf</mat-icon>
+        Download PDF
+      </button>
+    </div>
+
+    <!-- SEARCH -->
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search appointments</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Name, phone, email, department..."
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="filteredData">
+
+        <!-- FULL NAME -->
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef> Full Name </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fullName }}
+          </td>
+        </ng-container>
+
+        <!-- PHONE -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.phone }}
+          </td>
+        </ng-container>
+
+        <!-- EMAIL -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.email }}
+          </td>
+        </ng-container>
+
+        <!-- DEPARTMENT -->
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef> Department </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.department }}
+          </td>
+        </ng-container>
+
+        <!-- DATE -->
+        <ng-container matColumnDef="appointmentDate">
+          <th mat-header-cell *matHeaderCellDef> Appointment Date </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.appointmentDate | date:'dd-MM-yyyy' }}
+          </td>
+        </ng-container>
+
+        <!-- MESSAGE -->
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef> Message </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.message }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+
+  </mat-card>
+</section>
+
+<app-footer></app-footer>
+
+
+

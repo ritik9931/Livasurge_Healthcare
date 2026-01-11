@@ -1,0 +1,143 @@
+/* =====================
+   TRANSPARENT HEADER STATE
+   ===================== */
+.header-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: transparent !important;
+  box-shadow: none;
+
+  transition: background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* TEXT COLOR WHEN TRANSPARENT */
+.header-toolbar:not(.scrolled) .nav-links a,
+.header-toolbar:not(.scrolled) .cta-btn,
+.header-toolbar:not(.scrolled) .menu-btn,
+.header-toolbar:not(.scrolled) mat-icon {
+  color: #000 !important;   /* visible on white background */
+}
+
+/* =====================
+   SCROLLED STATE
+   ===================== */
+.header-toolbar.scrolled {
+  background: rgba(25, 118, 210, 0.95) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* TEXT COLOR WHEN SCROLLED */
+.header-toolbar.scrolled .nav-links a,
+.header-toolbar.scrolled .cta-btn,
+.header-toolbar.scrolled .menu-btn,
+.header-toolbar.scrolled mat-icon {
+  color: #fff !important;
+}
+
+/* Active link */
+.header-toolbar.scrolled .active {
+  border-bottom: 2px solid #fff;
+}
+
+.header-toolbar:not(.scrolled) .active {
+  border-bottom: 2px solid #000;
+}
+
+/* =====================
+   LOGO
+   ===================== */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+}
+
+/* =====================
+   SPACER
+   ===================== */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* =====================
+   DESKTOP NAV
+   ===================== */
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #fff;
+}
+
+.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* =====================
+   CTA
+   ===================== */
+.cta-btn {
+  margin-left: 16px;
+  background: #ffb300 !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* =====================
+   MOBILE
+   ===================== */
+.menu-btn {
+  display: none;
+  color: #fff;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 64px; /* height of mat-toolbar */
+  left: 0;
+  width: 100%;
+  background: #1976d2;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  padding: 14px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-cta {
+  background: #ffb300;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 900px) {
+  .nav-links,
+  .cta-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: inline-flex;
+  }
+}

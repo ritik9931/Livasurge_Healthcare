@@ -1,0 +1,225 @@
+/* HERO */
+.appointment-hero {
+  position: relative;
+  background: url('/appointment/hero-bg.png') center/cover no-repeat;
+  padding: 120px 20px 80px;
+  margin-top: -64px; /* attaches to header */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 70, 140, 0.85),
+    rgba(0, 160, 220, 0.85)
+  );
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 16px auto 0;
+  font-size: 1.1rem;
+}
+
+/* GRADIENT TEXT */
+.text-gradient {
+  background: linear-gradient(90deg, #00c6ff, #ced6df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* MAIN SECTION */
+.appointment-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.appointment-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* FORM CARD */
+.appointment-card {
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+/* RIGHT SIDE */
+.appointment-info img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.trust-points {
+  list-style: none;
+  margin-top: 25px;
+  padding: 0;
+}
+
+.trust-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.trust-points mat-icon {
+  color: #007bff;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .appointment-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-card {
+    padding: 30px 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  animation: pulse 1.8s infinite;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.success-modal {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  animation: popIn 0.4s ease;
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  color: #fff;
+  font-size: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.desktop-title {
+  display: block;
+}
+
+.mobile-title {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .desktop-title {
+    display: none;
+  }
+
+  .mobile-title {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+  }
+}
+

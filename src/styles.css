@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/* body {
+  padding-top: 64px; /* same as toolbar height */
+/* } */
+/* Prevent horizontal overflow everywhere */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* All elements respect container width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* .container {
+  max-width: 1200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+} */

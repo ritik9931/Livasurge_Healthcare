@@ -1,0 +1,164 @@
+/* TOP BAR */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+}
+
+/* LEFT SIDE */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* NAV */
+.admin-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-nav button {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ACTIVE LINK */
+.active-link {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+}
+
+/* ICON ALIGNMENT */
+.admin-nav mat-icon {
+  margin-right: 6px;
+}
+
+
+.admin-header h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* WELCOME */
+.welcome-section {
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+}
+
+.welcome-section p {
+  max-width: 600px;
+  margin: 10px auto 0;
+  color: #555;
+}
+
+/* GRADIENT TEXT */
+.text-gradient {
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* TABLE SECTION */
+.table-section {
+  padding: 40px 20px 60px;
+}
+
+.table-card {
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.table-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* TABLE RESPONSIVE WRAPPER */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* TABLE STYLING */
+table {
+  width: 100%;
+  min-width: 900px; /* ensures mobile scroll */
+}
+
+th {
+  font-weight: 700;
+  color: #007bff;
+}
+
+td {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .table-title {
+    text-align: center;
+  }
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.search-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  min-width: 900px;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

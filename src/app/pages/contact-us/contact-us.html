@@ -1,0 +1,108 @@
+<app-header></app-header>
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <h1>
+      Get in <span class="text-gradient">Touch</span>
+    </h1>
+    <p>
+      We’re here to help you with appointments, queries, and medical support.
+    </p>
+  </div>
+</section>
+<section class="contact-section">
+  <div class="container contact-wrapper">
+
+    <!-- LEFT : CONTACT FORM -->
+    <mat-card class="contact-card">
+      <h2 class="form-title">Send Us a Message</h2>
+
+      <form>
+
+        <div class="form-grid">
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Subject</mat-label>
+            <mat-select>
+              <mat-option value="appointment">Appointment</mat-option>
+              <mat-option value="query">General Query</mat-option>
+              <mat-option value="support">Support</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput rows="4"></textarea>
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" class="submit-btn">
+          Send Message
+        </button>
+
+      </form>
+    </mat-card>
+
+    <!-- RIGHT : INFO + IMAGE -->
+    <div class="contact-info">
+
+      <img
+        src="/contact/hospital-contact.avif"
+        alt="Hospital Contact"
+        loading="eager"
+      />
+
+      <ul class="info-list">
+  <li>
+    <mat-icon>location_on</mat-icon>
+    #301, Main Road, Hyderabad – 500062
+  </li>
+  <li>
+    <mat-icon>call</mat-icon>
+    +91 9625743882
+  </li>
+  <li>
+    <mat-icon>email</mat-icon>
+    dipanshukansal5911@gmail.com
+  </li>
+  <li>
+    <mat-icon>schedule</mat-icon>
+    Mon – Sat : 9:00 AM – 8:00 PM
+  </li>
+</ul>
+
+
+    </div>
+
+  </div>
+</section>
+<section class="map-strip">
+  <div class="container map-strip-content">
+    <mat-icon class="map-icon">location_on</mat-icon>
+    <p>
+      Visit us at our centrally located hospital for world-class healthcare.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

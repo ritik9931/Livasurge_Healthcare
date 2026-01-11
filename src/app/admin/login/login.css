@@ -1,0 +1,169 @@
+/* FULL BACKGROUND */
+.admin-login-bg {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+
+  width: 100vw;
+  height: 100vh;
+
+  background: url('/admin/admin-login.jpg') center center / cover no-repeat;
+
+  display: flex;
+  align-items: center;      /* ✅ vertical center */
+  justify-content: center;  /* ✅ horizontal center */
+
+  overflow: hidden;
+}
+
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* 🔥 stops scrolling */
+}
+
+
+/* DARK OVERLAY */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 30, 60, 0.75),
+    rgba(0, 120, 180, 0.75)
+  );
+  z-index: 1;
+}
+
+
+/* CENTER CONTAINER */
+
+.login-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  margin: auto;
+}
+
+.login-error {
+  color: #ff4d4f;
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Make inputs same width */
+mat-form-field {
+  width: 100%;
+}
+/* GLASS CARD */
+.login-card.glass {
+  padding: 36px 32px;
+  border-radius: 24px;
+
+  /* TRUE GLASS */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+/* TITLES */
+.login-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: black;
+  margin-bottom: 28px;
+}
+
+/* GRADIENT TEXT */
+.text-gradient {
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+/* REMEMBER */
+.remember-row {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 18px
+}
+
+/* Center checkbox text nicely */
+.remember-row mat-checkbox {
+  color: #fff;
+}
+
+/* Input text */
+mat-form-field input {
+  color: #fff;
+}
+
+/* Labels */
+.mat-form-field-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Outline */
+.mat-form-field-outline {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .login-card.glass {
+    padding: 28px 22px;
+  }
+
+  .login-title {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,271 @@
+<app-header></app-header>
+<main class="white-bg">
+  <section class="hero-slider">
+    <swiper-container slides-per-view="1" speed="1000" loop="true" effect="fade" autoplay-delay="5000"
+      pagination="true">
+      @for (slide of slides; track $index) {
+      <swiper-slide>
+        <div class="single-slider d-flex align-items-center" [style.background-image]="'url(' + slide.bg + ')'">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-7 col-lg-9 col-md-10">
+                <div class="hero__caption">
+                  <span class="animated-sub">{{ slide.sub }}</span>
+                  <h1 class="animated-title">{{ slide.title }}</h1>
+                  <p class="animated-text">Expert healthcare solutions delivered with compassion and advanced
+                    technology.</p>
+                  <div class="animated-btn">
+                    <button mat-raised-button color="primary" class="hero-btn" routerLink="/appointment">
+                      Make Appointment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </section>
+
+
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 d-flex">
+          <div class="about-img-wrapper reveal-left w-100">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
+              alt="Hospital Interior" class="img-fluid industry-image shadow">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 d-flex">
+          <div class="about-content-card reveal-right w-100">
+            <div class="about-content">
+              <div class="section-tag mb-3">
+                <span class="line"></span>
+                <span class="tag-text">About Our Hospital</span>
+              </div>
+              <h2 class="fw-bold mb-3 industry-title">
+                Leading the Way in <span class="text-gradient">Medical Excellence.</span>
+              </h2>
+              <p class="text-muted mb-4 industry-description">
+                We deliver world-class healthcare through a combination of advanced technology,
+                expert professionals, and a patient-first approach.
+              </p>
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <div class="pro-feature-box">
+                    <mat-icon class="icon-box">emergency</mat-icon>
+                    <div class="feature-info">
+                      <h6 class="fw-bold mb-0">Emergency</h6>
+                      <small class="text-muted">24/7 Rapid Response</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="pro-feature-box">
+                    <mat-icon class="icon-box">verified_user</mat-icon>
+                    <div class="feature-info">
+                      <h6 class="fw-bold mb-0">Specialists</h6>
+                      <small class="text-muted">Certified Experts</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4 opacity-25">
+
+              <div class="d-flex align-items-center gap-4 flex-wrap">
+                <button mat-flat-button color="primary" class="pro-btn">Explore Our Story</button>
+                <div class="contact-mini-clean">
+                  <small class="d-block text-muted">Call for Inquiry</small>
+                  <strong class="contact-number">+91 9625743882</strong>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="doctors-section py-5 bg-light section-safe">
+  <div class="container">
+
+    <!-- SECTION HEADER -->
+    <div class="section-header text-center reveal-up">
+      <span class="section-tag">Our Experts</span>
+
+      <h2 class="section-title">
+        Meet Our <span class="text-gradient">Medical Specialists</span>
+      </h2>
+
+      <p class="section-subtitle">
+        Highly qualified professionals delivering world-class healthcare
+      </p>
+    </div>
+
+    <!-- DOCTORS ROW -->
+    <div class="doctors-grid mt-5">
+  @for (doc of doctors; track doc.name) {
+    <div class="doctor-col reveal-up">
+      <mat-card class="doctor-card">
+        <div class="doctor-img-wrapper">
+          <img [src]="doc.img" [alt]="doc.name" />
+        </div>
+
+        <mat-card-content>
+          <h4 class="doctor-name">{{ doc.name }}</h4>
+          <p class="doctor-role">{{ doc.role }}</p>
+
+          <div class="doctor-actions">
+            <button mat-icon-button><mat-icon>person</mat-icon></button>
+            <button mat-icon-button><mat-icon>event</mat-icon></button>
+            <button mat-icon-button><mat-icon>chat</mat-icon></button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+</div>
+  </div>
+</section>
+
+
+<!-- services.component.html -->
+<section class="services-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header text-center">
+      <span class="section-tag">Our Services</span>
+      <h2 class="section-title">
+        Healthcare <span class="text-gradient">Specialities</span>
+      </h2>
+    </div>
+
+    <!-- HORIZONTAL ICON LIST -->
+   <div class="services-icons-horizontal">
+  <button
+    mat-button
+    matRipple
+    [matRippleCentered]="true"
+    [matRippleRadius]="40"
+    *ngFor="let service of services; let i = index"
+    (click)="selectService(i)"
+    [class.active]="activeService === i"
+    #serviceBtn
+  >
+    <mat-icon>{{ service.icon }}</mat-icon>
+    <span>{{ service.title }}</span>
+  </button>
+</div>
+    <!-- IMAGE BELOW -->
+  <div class="services-image">
+  <img
+    [@slideFade]="activeService"
+    [src]="services[activeService].image"
+    [alt]="services[activeService].title"
+  />
+
+  <div class="image-overlay">
+    <h3>{{ services[activeService].title }}</h3>
+    <p>{{ services[activeService].desc }}</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+
+    <div class="section-header text-center">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">
+        What Our <span class="text-gradient">Patients Say</span>
+      </h2>
+    </div>
+
+    <div class="testimonial-card" [@testimonialAnim]="activeTestimonial">
+      <img
+        class="patient-img"
+        [src]="testimonials[activeTestimonial].image"
+        alt="Patient"
+      />
+
+      <p class="testimonial-text">
+        “{{ testimonials[activeTestimonial].message }}”
+      </p>
+
+      <div class="rating">
+        <mat-icon *ngFor="let star of [].constructor(testimonials[activeTestimonial].rating)">
+          star
+        </mat-icon>
+      </div>
+
+      <h4>{{ testimonials[activeTestimonial].name }}</h4>
+      <span class="city">{{ testimonials[activeTestimonial].city }}</span>
+    </div>
+
+    <!-- Controls -->
+    <div class="testimonial-controls">
+      <button mat-icon-button (click)="prevTestimonial()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="nextTestimonial()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="appointment-cta">
+  <div class="cta-overlay"></div>
+
+  <div class="container cta-content" [@ctaAnim]>
+    <h2>
+      Need a Doctor Consultation?
+    </h2>
+
+    <p>
+      Book your appointment today and get expert medical care from our
+      experienced specialists.
+    </p>
+
+    <div class="cta-actions">
+      <a
+        mat-raised-button
+        color="primary"
+        routerLink="/appointment"
+        class="cta-btn"
+      >
+        <mat-icon>event_available</mat-icon>
+        Book Appointment
+      </a>
+
+      <a
+        mat-stroked-button
+        color="accent"
+        href="tel:+919625743882"
+        class="cta-btn outline"
+      >
+        <mat-icon>call</mat-icon>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+</main>
+
+
+
+<app-footer></app-footer>

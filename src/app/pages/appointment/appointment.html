@@ -1,0 +1,129 @@
+<app-header></app-header>
+
+<!-- HERO -->
+<section class="appointment-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+   <h1 class="desktop-title">
+  Book Your <span class="text-gradient">Doctor Appointment</span>
+</h1>
+
+<h1 class="mobile-title">
+  Book Your Doctor Appointment
+</h1>
+    <p>
+      Fast, easy & secure appointment booking with our medical specialists.
+    </p>
+  </div>
+</section>
+
+<section class="appointment-section">
+  <div class="container appointment-wrapper">
+
+    <!-- LEFT : FORM -->
+    <mat-card class="appointment-card">
+      <h2 class="form-title">Appointment Details</h2>
+
+      <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()">
+
+        <div class="form-grid">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullName" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phone" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department">
+              <mat-option *ngFor="let dept of departments" [value]="dept">
+                {{ dept }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Appointment Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="appointmentDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput rows="3" formControlName="message"></textarea>
+          </mat-form-field>
+
+        </div>
+
+        <button mat-raised-button color="primary" class="submit-btn">
+          Book Appointment
+        </button>
+      </form>
+    </mat-card>
+
+    <!-- RIGHT : IMAGE + TRUST -->
+    <div class="appointment-info">
+      <img
+        src="/appointment/doctor-consultation.jpg"
+        alt="Doctor Consultation"
+      />
+
+      <ul class="trust-points">
+        <li><mat-icon>verified</mat-icon> Experienced Specialists</li>
+        <li><mat-icon>schedule</mat-icon> Minimal Waiting Time</li>
+        <li><mat-icon>local_hospital</mat-icon> Advanced Medical Care</li>
+        <li><mat-icon>support_agent</mat-icon> 24×7 Support</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- WhatsApp CTA -->
+<a
+  class="whatsapp-float"
+  href="https://wa.me/919625743882?text=Hello%20I%20want%20to%20book%20a%20doctor%20appointment"
+  target="_blank"
+  aria-label="WhatsApp Appointment"
+>
+  <img src="/icons/whatsapp.svg" alt="WhatsApp" />
+</a>
+
+<!-- SUCCESS MODAL -->
+<div class="success-overlay" *ngIf="successModal">
+  <div class="success-modal">
+
+    <div class="checkmark">
+      ✓
+    </div>
+
+    <h3>Appointment Booked!</h3>
+    <p>
+      Thank you. Our team will contact you shortly.
+    </p>
+
+    <button mat-raised-button color="primary" (click)="closeSuccess()">
+      Done
+    </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+<app-footer></app-footer>
